@@ -1,51 +1,60 @@
 # Hospital-Data-Analysis-Python
 
-### Descriçao 
+## 📌 Descrição
 
-Este projeto tem como objetivo organizar e analisar dados hospitalares sintéticos, transformando informações brutas em resultados mais legíveis e compreensíveis para o usuário. A proposta é automatizar a leitura de grandes volumes de dados, permitir buscas específicas e gerar estatísticas básicas sobre atendimentos hospitalares, servindo como estudo prático de análise de dados e automação com Python.
-
----
-
-## 🔹BLOCO 1 — Perguntas operacionais (recomendadas para início)
-
-Escolha 1 dessas para começar:
-
-Quantos atendimentos foram realizados no período?
-
-Quantos atendimentos por tipo (ENCOUNTERCLASS)?
-
-Quantos atendimentos por profissional (PROVIDER)?
-
-Duração média dos atendimentos (STOP - START)?
-
-👉 Essas são perfeitas para o primeiro relatório.
-
-## 🔹 BLOCO 2 — Perguntas financeiras (nível seguinte)
-
-Quando se sentir confortável:
-
-Custo total dos atendimentos?
-
-Diferença entre custo base e custo final?
-
-Quanto foi coberto pelos convênios?
-
-Atendimentos mais caros?
-
-## 🔹 BLOCO 3 — Perguntas clínicas (mais sensíveis)
-
-(Depois, não agora)
-
-Motivos mais comuns de atendimento?
-
-Relação entre tipo de atendimento e custo?
+Este projeto tem como objetivo organizar e analisar dados hospitalares sintéticos, transformando informações brutas em informações mais legíveis e úteis para o usuário.  
+A proposta é automatizar a leitura de grandes volumes de dados, permitir buscas específicas e gerar estatísticas básicas sobre atendimentos hospitalares, servindo como um estudo prático de **análise de dados e automação com Python**.
 
 ---
 
-Separar assim:
+## 📂 Estrutura do Projeto
 
-data/raw/ → dados brutos, sem modificação
+- `data/raw/` → dados brutos, sem modificação  
+- `data/processed/` → dados tratados (planejado)  
+- `src/` → código-fonte do projeto  
 
-src/ → código
+---
 
-data/processed/ → dados tratados (no futuro)
+## 🔹 Bloco 1 — Perguntas operacionais (início recomendado)
+
+- Quantos atendimentos foram realizados no período?  
+- Quantos atendimentos por tipo (`ENCOUNTERCLASS`)?  
+- Quantos atendimentos por profissional (`PROVIDER`)?  
+- Qual a duração média dos atendimentos (`STOP - START`)?  
+
+👉 Ideais para o primeiro relatório.
+
+---
+
+## 🔹 Bloco 2 — Perguntas financeiras (nível intermediário)
+
+- Qual o custo total dos atendimentos?  
+- Diferença entre custo base e custo final?  
+- Quanto foi coberto pelos convênios?  
+- Quais foram os atendimentos mais caros?  
+
+---
+
+## 🔹 Bloco 3 — Perguntas clínicas (nível avançado)
+
+> Perguntas mais sensíveis e planejadas para etapas futuras do projeto.
+
+- Motivos mais comuns de atendimento  
+- Relação entre tipo de atendimento e custo  
+
+---
+
+## ▶️ Como executar o projeto
+
+```bash
+python src/main.py
+```
+
+# 📎 Observações
+
+- Os dados utilizados são sintéticos e têm finalidade exclusivamente educacional.
+
+- O projeto está em desenvolvimento contínuo, com foco em boas práticas de organização e análise de dados.
+
+
+---
