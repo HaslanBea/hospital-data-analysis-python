@@ -39,3 +39,13 @@ Atendimentos mais caros?
 Motivos mais comuns de atendimento?
 
 Relação entre tipo de atendimento e custo?
+
+---
+
+Separar assim:
+
+data/raw/ → dados brutos, sem modificação
+
+src/ → código
+
+data/processed/ → dados tratados (no futuro)

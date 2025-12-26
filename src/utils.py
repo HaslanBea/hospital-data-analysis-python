@@ -1,0 +1,1 @@
+# fuçoes auxiliares
