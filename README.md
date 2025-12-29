@@ -2,12 +2,15 @@
 
 ## 📌 Descrição
 
-Este projeto tem como objetivo organizar e analisar dados hospitalares sintéticos, transformando informações brutas em informações mais legíveis e úteis para o usuário.  
-A proposta é automatizar a leitura de grandes volumes de dados, permitir buscas específicas e gerar estatísticas básicas sobre atendimentos hospitalares, servindo como um estudo prático de **análise de dados e automação com Python**.
+Este projeto tem como objetivo organizar e analisar dados hospitalares sintéticos, transformando informações brutas em dados mais legíveis e úteis para o usuário.
+
+A proposta é praticar **manipulação de arquivos, lógica de programação e regras de negócio em Python**, caminhando para automação de análises, geração de estatísticas e visualização de informações no terminal (e futuramente em interfaces).
+
+> ⚠️ Projeto em fase inicial: a estrutura e o escopo estão definidos, e o código será implementado de forma incremental.
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto (Planejada)
 
 - `data/raw/` → dados brutos, sem modificação  
 - `data/processed/` → dados tratados (planejado)  
@@ -17,12 +20,12 @@ A proposta é automatizar a leitura de grandes volumes de dados, permitir buscas
 
 ## 🔹 Bloco 1 — Perguntas operacionais (início recomendado)
 
-- Quantos atendimentos foram realizados no período?  
+- ✅ Quantos atendimentos foram realizados no período?  
 - Quantos atendimentos por tipo (`ENCOUNTERCLASS`)?  
 - Quantos atendimentos por profissional (`PROVIDER`)?  
 - Qual a duração média dos atendimentos (`STOP - START`)?  
 
-👉 Ideais para o primeiro relatório.
+👉 Ideais para o primeiro relatório e validação da lógica do sistema.
 
 ---
 
@@ -37,24 +40,26 @@ A proposta é automatizar a leitura de grandes volumes de dados, permitir buscas
 
 ## 🔹 Bloco 3 — Perguntas clínicas (nível avançado)
 
-> Perguntas mais sensíveis e planejadas para etapas futuras do projeto.
+> Perguntas planejadas para etapas futuras do projeto.
 
 - Motivos mais comuns de atendimento  
 - Relação entre tipo de atendimento e custo  
 
 ---
 
-## ▶️ Como executar o projeto
+## ▶️ Execução (futura)
 
 ```bash
 python src/main.py
 ```
 
+---
 # 📎 Observações
 
 - Os dados utilizados são sintéticos e têm finalidade exclusivamente educacional.
 
-- O projeto está em desenvolvimento contínuo, com foco em boas práticas de organização e análise de dados.
-
+- O projeto está em desenvolvimento contínuo, com foco em aprendizado prático, organização de código e evolução gradual das funcionalidades.
 
 ---
+
+

@@ -50,3 +50,32 @@ Cuida da onde fica os arquivos
 ### 6️⃣ utils.py — Ferramentas genéricas
 
 Funçoes reproveitaveis
+
+
+
+🧩 O exercício que você deve fazer agora (sem código)
+
+Pegue UMA pergunta do Bloco 1 do seu README e escreva apenas isso, em texto:
+
+1️⃣ Qual é a pergunta?  Quantos atendimentos foram realizados no período?
+2️⃣ O que entra? encouters.csv
+3️⃣ O que sai? o valor em numero da quantidade 
+4️⃣ Quais são os passos (em português)? 
+ - Abrir o arquivo
+ - Ler linha por linha 
+ - enquanto le, guarda o valor em uma const
+ - quando  tiver todas as linhas, subtrai uma que seria o cabeçalho
+ - mostra o valor na tela
+
+5️⃣ Isso pertence a qual arquivo? (loader, service, main?)
+loader
+
+💬 Quando voltar pra mim
+
+Me mande apenas o texto, tipo:
+
+Problema:
+Entrada:
+Saída:
+Passos:
+Arquivo responsável:
