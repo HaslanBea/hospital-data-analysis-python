@@ -7,6 +7,7 @@ def carregar_atendimentos():
         f.readline() # Aqui vai pular a linha do cabeçalho
         atendimentos = [] #Uma lista que vai receber os dados
         for linha in f: # vai ler as linhas
-            atendimentos.append(linha.split())
+            atendimentos.append(linha.strip().split(","))
     return atendimentos
+
 

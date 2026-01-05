@@ -36,6 +36,8 @@ A proposta é praticar **manipulação de arquivos, lógica de programação e r
 - Quanto foi coberto pelos convênios?  
 - Quais foram os atendimentos mais caros?  
 
+#### O projeto calcula métricas financeiras básicas, como diferença entre custo base e custo final, valor coberto por convênios e custo efetivo ao paciente.
+
 ---
 
 ## 🔹 Bloco 3 — Perguntas clínicas (nível avançado)
