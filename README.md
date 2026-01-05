@@ -31,7 +31,7 @@ A proposta é praticar **manipulação de arquivos, lógica de programação e r
 
 ## 🔹 Bloco 2 — Perguntas financeiras (nível intermediário)
 
-- Qual o custo total dos atendimentos?  
+- ✅Qual o custo total dos atendimentos?  
 - Diferença entre custo base e custo final?  
 - Quanto foi coberto pelos convênios?  
 - Quais foram os atendimentos mais caros?  
