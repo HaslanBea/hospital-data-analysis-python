@@ -21,7 +21,7 @@ A proposta é praticar **manipulação de arquivos, lógica de programação e r
 ## 🔹 Bloco 1 — Perguntas operacionais (início recomendado)
 
 - ✅ Quantos atendimentos foram realizados no período?  
-- Quantos atendimentos por tipo (`ENCOUNTERCLASS`)?  
+- ✅Quantos atendimentos por tipo (`ENCOUNTERCLASS`)?  
 - Quantos atendimentos por profissional (`PROVIDER`)?  
 - Qual a duração média dos atendimentos (`STOP - START`)?  
 

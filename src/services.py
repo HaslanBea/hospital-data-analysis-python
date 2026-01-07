@@ -1,5 +1,6 @@
 import csv
 from loader import carregar_atendimentos
+lista_atendimentos = carregar_atendimentos()
 
 def contar_atendimentos(carregar_atendimentos):
     total = 0 
@@ -31,4 +32,22 @@ def calcular_diferenca_custo(atendimentos):
         print(f"Média dos acréscimos: {media}")
 
     print(f"Total de atendimentos sem acréscimo: {sem_acrescimo}")
+
+def tipos_atendimentos(atendimentos):
+    contagem = {}
+
+    for atendimento in atendimentos:
+        tipo = atendimento[7]  # ENCOUNTERCLASS
+
+        if tipo in contagem:
+            contagem[tipo] += 1
+        else:
+            contagem[tipo] = 1
+
+    return contagem
+
+resultado = tipos_atendimentos(lista_atendimentos)
+
+for tipo, quantidade in resultado.items():
+    print(f"{tipo}: {quantidade}")
 
