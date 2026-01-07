@@ -51,3 +51,21 @@ resultado = tipos_atendimentos(lista_atendimentos)
 for tipo, quantidade in resultado.items():
     print(f"{tipo}: {quantidade}")
 
+def atendimentos_por_provider(atendimentos):
+    contagem = {}
+
+    for atendimento in atendimentos:
+        provider = atendimento[5]
+
+        if provider in contagem:
+            contagem[provider] += 1
+        else:
+            contagem[provider] = 1
+
+    return contagem
+
+def top_providers(atendimentos):
+    contagem = atendimentos_por_provider(atendimentos)
+    top_5 = sorted(contagem.items(), key=lambda x: x[1], reverse=True)[:3]
+    return top_5
+
