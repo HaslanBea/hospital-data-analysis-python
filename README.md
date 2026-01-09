@@ -22,8 +22,8 @@ A proposta é praticar **manipulação de arquivos, lógica de programação e r
 
 - ✅ Quantos atendimentos foram realizados no período?  
 - ✅Quantos atendimentos por tipo (`ENCOUNTERCLASS`)?  
-- Quantos atendimentos por profissional (`PROVIDER`)?  
-- Qual a duração média dos atendimentos (`STOP - START`)?  
+- ✅Quantos atendimentos por profissional (`PROVIDER`)?  
+- ✅Qual a duração média dos atendimentos (`STOP - START`)?  
 
 👉 Ideais para o primeiro relatório e validação da lógica do sistema.
 

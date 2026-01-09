@@ -3,6 +3,7 @@ from services import contar_atendimentos
 from services import calcular_diferenca_custo
 from services import tipos_atendimentos
 from services import top_providers
+from services import media_atendimentos
 
 def main():
     atendimentos = carregar_atendimentos()
@@ -14,7 +15,8 @@ def main():
     print(f"Tipos de atendimentos: {tipos}")
     top = top_providers(atendimentos)
     print(f"Top providers: {top}")
-    
+    media = media_atendimentos(atendimentos)
+    print(f"Média de duração dos atendimentos: {media}")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,9 @@
 import csv
 from loader import carregar_atendimentos
+from datetime import datetime
+
+
+
 lista_atendimentos = carregar_atendimentos()
 
 def contar_atendimentos(carregar_atendimentos):
@@ -7,6 +11,7 @@ def contar_atendimentos(carregar_atendimentos):
     for i in carregar_atendimentos: 
         total += 1
     return total
+
 
 #  Diferença entre custo base e custo final?
 def calcular_diferenca_custo(atendimentos):
@@ -32,6 +37,7 @@ def calcular_diferenca_custo(atendimentos):
         print(f"Média dos acréscimos: {media}")
 
     print(f"Total de atendimentos sem acréscimo: {sem_acrescimo}")
+
 
 def tipos_atendimentos(atendimentos):
     contagem = {}
@@ -64,8 +70,32 @@ def atendimentos_por_provider(atendimentos):
 
     return contagem
 
+
 def top_providers(atendimentos):
     contagem = atendimentos_por_provider(atendimentos)
     top_5 = sorted(contagem.items(), key=lambda x: x[1], reverse=True)[:3]
     return top_5
 
+def media_atendimentos(atendimentos):
+    soma_duracao = 0
+    quantidade = 0
+
+    for atendimento in atendimentos:
+        inicio_str = atendimento[1]  # START
+        fim_str = atendimento[2]     # STOP
+
+        inicio = datetime.strptime(inicio_str, "%Y-%m-%dT%H:%M:%SZ")
+        fim = datetime.strptime(fim_str, "%Y-%m-%dT%H:%M:%SZ")
+
+        duracao = (fim - inicio).total_seconds() / 3600  # duração em horas
+
+        soma_duracao += duracao
+        quantidade += 1
+
+    if quantidade == 0:
+        print("Não há atendimentos para calcular a média.")
+        return 0
+
+    media = soma_duracao / quantidade
+    print(f"Média de duração dos atendimentos (em horas): {media}")
+    return media
