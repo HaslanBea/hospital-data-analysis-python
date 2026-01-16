@@ -1,27 +1,19 @@
-import csv
-from loader import carregar_atendimentos
 from datetime import datetime
 
 
-
-lista_atendimentos = carregar_atendimentos()
-
-def contar_atendimentos(carregar_atendimentos):
-    total = 0 
-    for i in carregar_atendimentos: 
-        total += 1
-    return total
+def contar_atendimentos(atendimentos):
+    return len(atendimentos)
 
 
-#  Diferença entre custo base e custo final?
 def calcular_diferenca_custo(atendimentos):
     sem_acrescimo = 0
     soma = 0
     quantidade = 0
 
     for atendimento in atendimentos:
-        custo_base = float(atendimento[10]) 
-        custo_final = float(atendimento[11]) 
+        custo_base = float(atendimento["BASE_ENCOUNTER_COST"])
+        custo_final = float(atendimento["TOTAL_CLAIM_COST"])
+
         acrescimo = custo_final - custo_base
 
         if acrescimo == 0:
@@ -31,19 +23,24 @@ def calcular_diferenca_custo(atendimentos):
             quantidade += 1
 
     if quantidade == 0:
-        print("Não existe atendimento com acréscimo")
-    else:
-        media = soma / quantidade
-        print(f"Média dos acréscimos: {media}")
+        return {
+            "media_acrescimo": 0,
+            "sem_acrescimo": sem_acrescimo
+        }
 
-    print(f"Total de atendimentos sem acréscimo: {sem_acrescimo}")
+    media = soma / quantidade
+
+    return {
+        "media_acrescimo": media,
+        "sem_acrescimo": sem_acrescimo
+    }
 
 
 def tipos_atendimentos(atendimentos):
     contagem = {}
 
     for atendimento in atendimentos:
-        tipo = atendimento[7]  # ENCOUNTERCLASS
+        tipo = atendimento["ENCOUNTERCLASS"]
 
         if tipo in contagem:
             contagem[tipo] += 1
@@ -52,16 +49,12 @@ def tipos_atendimentos(atendimentos):
 
     return contagem
 
-resultado = tipos_atendimentos(lista_atendimentos)
-
-for tipo, quantidade in resultado.items():
-    print(f"{tipo}: {quantidade}")
 
 def atendimentos_por_provider(atendimentos):
     contagem = {}
 
     for atendimento in atendimentos:
-        provider = atendimento[5]
+        provider = atendimento["PROVIDER"]
 
         if provider in contagem:
             contagem[provider] += 1
@@ -71,31 +64,43 @@ def atendimentos_por_provider(atendimentos):
     return contagem
 
 
-def top_providers(atendimentos):
+def top_providers(atendimentos, limite=3):
     contagem = atendimentos_por_provider(atendimentos)
-    top_5 = sorted(contagem.items(), key=lambda x: x[1], reverse=True)[:3]
-    return top_5
+    return sorted(contagem.items(), key=lambda x: x[1], reverse=True)[:limite]
 
-def media_atendimentos(atendimentos):
+
+def media_duracao_atendimentos(atendimentos):
     soma_duracao = 0
     quantidade = 0
 
     for atendimento in atendimentos:
-        inicio_str = atendimento[1]  # START
-        fim_str = atendimento[2]     # STOP
+        inicio = datetime.strptime(atendimento["START"], "%Y-%m-%dT%H:%M:%SZ")
+        fim = datetime.strptime(atendimento["STOP"], "%Y-%m-%dT%H:%M:%SZ")
 
-        inicio = datetime.strptime(inicio_str, "%Y-%m-%dT%H:%M:%SZ")
-        fim = datetime.strptime(fim_str, "%Y-%m-%dT%H:%M:%SZ")
+        duracao_horas = (fim - inicio).total_seconds() / 3600
 
-        duracao = (fim - inicio).total_seconds() / 3600  # duração em horas
-
-        soma_duracao += duracao
+        soma_duracao += duracao_horas
         quantidade += 1
 
     if quantidade == 0:
-        print("Não há atendimentos para calcular a média.")
         return 0
 
-    media = soma_duracao / quantidade
-    print(f"Média de duração dos atendimentos (em horas): {media}")
-    return media
+    return soma_duracao / quantidade
+
+# cobertura média do convênio
+
+def media_cobertura_convenio(atendimentos):
+    soma_cobertura = 0
+    quantidade = 0
+
+    for atendimento in atendimentos:
+        cobertura = float(atendimento["PAYER_COVERAGE"])  # PAYER_COVERAGE
+        soma_cobertura += cobertura
+        quantidade += 1
+
+    if quantidade > 0:
+        return soma_cobertura / quantidade
+    else:
+        return 0
+
+    

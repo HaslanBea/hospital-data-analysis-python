@@ -32,8 +32,8 @@ A proposta é praticar **manipulação de arquivos, lógica de programação e r
 ## 🔹 Bloco 2 — Perguntas financeiras (nível intermediário)
 
 - ✅Qual o custo total dos atendimentos?  
-- Diferença entre custo base e custo final?  
-- Quanto foi coberto pelos convênios?  
+- ✅Diferença entre custo base e custo final?  
+- ✅Quanto foi coberto media pelos convênios?  
 - Quais foram os atendimentos mais caros?  
 
 #### O projeto calcula métricas financeiras básicas, como diferença entre custo base e custo final, valor coberto por convênios e custo efetivo ao paciente.
