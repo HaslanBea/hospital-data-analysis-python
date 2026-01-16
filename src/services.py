@@ -103,4 +103,8 @@ def media_cobertura_convenio(atendimentos):
     else:
         return 0
 
-    
+# Quais foram o atendimento mais caro?
+
+def valor_maximo_atendimento(atendimentos):
+    return max(float(atendimento["BASE_ENCOUNTER_COST"]) for atendimento in atendimentos)
+

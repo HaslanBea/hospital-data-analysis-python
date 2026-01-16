@@ -34,7 +34,7 @@ A proposta é praticar **manipulação de arquivos, lógica de programação e r
 - ✅Qual o custo total dos atendimentos?  
 - ✅Diferença entre custo base e custo final?  
 - ✅Quanto foi coberto media pelos convênios?  
-- Quais foram os atendimentos mais caros?  
+- ✅Quais foram o atendimento mais caro?  
 
 #### O projeto calcula métricas financeiras básicas, como diferença entre custo base e custo final, valor coberto por convênios e custo efetivo ao paciente.
 
